@@ -1,0 +1,12 @@
+.PostList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 16px;
+
+  .Pagination {
+    margin: 0 auto;
+  }
+}

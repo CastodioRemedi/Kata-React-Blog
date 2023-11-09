@@ -1,0 +1,31 @@
+.UserForm {
+  background-color: #fff;
+  width: 386px;
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  .Header {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 21px;
+  }
+  .Avatar {
+    margin: 0 auto 21px auto;
+  }
+  .Form {
+    .button {
+      width: 100%;
+      height: 40px;
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+  .Footer {
+    text-align: center;
+    color: #8c8c8c;
+  }
+}

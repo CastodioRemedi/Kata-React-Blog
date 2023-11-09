@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+#Blog {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  min-width: 640px;
+
+  .boxShadow {
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  .borderRadius {
+    border-radius: 5px;
+  }
+}

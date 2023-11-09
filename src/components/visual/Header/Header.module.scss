@@ -1,0 +1,32 @@
+.Header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  width: 100%;
+
+  .Title {
+    font-size: 18px;
+  }
+  .Actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+
+    .UserInfo {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+}
