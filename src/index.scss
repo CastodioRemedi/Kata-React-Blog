@@ -1,0 +1,15 @@
+@import "Inter.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: "Inter Regular", "Inter Bold", "Inter Medium", serif;
+  font-style: normal;
+}
+
+#root {
+  background-color: #EBEEF3;
+  min-height: 100vh;
+}
