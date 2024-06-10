@@ -1,6 +1,7 @@
-import { useSelector, useDispatch } from 'react-redux'
+// BlogList.js
 import { useEffect, useState } from 'react'
 import { Redirect } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 
 import { addBlogsStarted, addBlogsSuccsess, addBlogsFailure } from '../../redux/actions'
 import BlogService from '../../services/blog-services'
@@ -12,8 +13,11 @@ import Pagin from '../pagination/pagination'
 import classes from './blogList.module.scss'
 
 function BlogList() {
-  const [offset, setOffset] = useState(0)
-  const [pages, sePages] = useState(null)
+  const [offset, setOffset] = useState(() => {
+    const savedOffset = localStorage.getItem('offset')
+    return savedOffset ? parseInt(savedOffset) : 0
+  })
+  const [pages, setPages] = useState(null)
   const { blogs, error, loading } = useSelector((state) => state.blogs)
   const token = useSelector((state) => state.user.token)
   const dispatch = useDispatch()
@@ -25,12 +29,16 @@ function BlogList() {
     updateBlogs()
   }, [offset])
 
+  useEffect(() => {
+    localStorage.setItem('offset', offset.toString())
+  }, [offset])
+
   const updateBlogs = async () => {
     dispatch(addBlogsStarted())
     try {
       const res = await getArticles(offset, token)
       onBlogsLoaded(res.articles)
-      sePages(Math.ceil(res.articlesCount / 10))
+      setPages(Math.ceil(res.articlesCount / 10))
     } catch (e) {
       dispatch(addBlogsFailure(e))
     }

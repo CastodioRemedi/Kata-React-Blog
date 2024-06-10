@@ -1,14 +1,34 @@
+import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { Redirect } from 'react-router-dom'
 
 import classes from './article.module.scss'
 
-const Article = ({ isLoggedIn, onSubmit, tags, handleAddTag, handleDeleteTag, handleTagChange, dataType }) => {
+const Article = ({
+  isLoggedIn,
+  onSubmit,
+  tags,
+  tagErrors, // Add tagErrors prop
+  handleAddTag,
+  handleDeleteTag,
+  handleTagChange,
+  initialData,
+  dataType,
+}) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm()
+
+  useEffect(() => {
+    if (dataType === 'edit-article') {
+      setValue('title', initialData.title)
+      setValue('description', initialData.description)
+      setValue('body', initialData.body)
+    }
+  }, [dataType, initialData, setValue])
 
   const title = dataType === 'new-article' ? 'Create new article' : 'Edit article'
 
@@ -44,23 +64,22 @@ const Article = ({ isLoggedIn, onSubmit, tags, handleAddTag, handleDeleteTag, ha
           placeholder="Short description"
           {...register('description', { required: true })}
         />
-        {errors.title && (
+        {errors.description && (
           <div>
             <span className={classes['article__span']}>Поле Description обязательно для заполнения</span>
           </div>
         )}
 
-        <label className={classes['article__label']} htmlFor="description">
+        <label className={classes['article__label']} htmlFor="body">
           Text
         </label>
         <textarea
           className={classes['article__textarea']}
-          type="text"
-          id="description"
+          id="body"
           placeholder="Text"
           {...register('body', { required: true })}
         />
-        {errors.title && (
+        {errors.body && (
           <div>
             <span className={classes['article__span']}>Поле Text обязательно для заполнения</span>
           </div>
@@ -70,19 +89,26 @@ const Article = ({ isLoggedIn, onSubmit, tags, handleAddTag, handleDeleteTag, ha
           {tags.length > 0 && <label className={classes['article__label']}>Tags</label>}
           {tags.map((tag, i) => (
             <div key={i} className={classes['article__container']}>
-              <input
-                className={classes['article__tag']}
-                type="text"
-                placeholder="Tag"
-                value={tag}
-                onChange={(e) => handleTagChange(i, e.target.value)}
-              />
-              <button
-                className={`${classes['article__btn']} ${classes['btn__delete']}`}
-                onClick={(e) => handleDeleteTag(e, i)}
-              >
-                Delete
-              </button>
+              <div className={classes['article__div']}>
+                <input
+                  className={classes['article__tag']}
+                  type="text"
+                  placeholder="Tag"
+                  value={tag}
+                  onChange={(e) => handleTagChange(i, e.target.value)}
+                />
+                <button
+                  className={`${classes['article__btn']} ${classes['btn__delete']}`}
+                  onClick={(e) => handleDeleteTag(e, i)}
+                >
+                  Delete
+                </button>
+              </div>
+              {tagErrors[i] && (
+                <div>
+                  <span className={classes['article__span']}>{tagErrors[i]}</span>
+                </div>
+              )}
             </div>
           ))}
         </div>

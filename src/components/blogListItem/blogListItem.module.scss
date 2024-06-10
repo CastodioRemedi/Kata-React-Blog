@@ -1,114 +1,114 @@
 .blogListItem__link {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 .blogListItem {
-	position: relative;
-	width: 941px;
-	display: flex;
-	justify-content: space-between;
-	padding: 15px 20px;
-	background-color: #fff;
-	margin-bottom: 26px;
-	box-shadow: 2px 2px 5px 0px rgba(34, 60, 80, 0.2);
-	height: 140px;
-	cursor: pointer;
+  position: relative;
+  width: 941px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background-color: #fff;
+  margin-bottom: 26px;
+  box-shadow: 2px 2px 5px 0px rgba(34, 60, 80, 0.2);
+  height: 140px;
+  cursor: pointer;
 }
 
 .blogListItem:hover {
-	box-shadow: 5px 5px 5px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 5px 5px 5px 0px rgba(34, 60, 80, 0.2);
 }
 
 .blogListItem__container {
-	width: 682px;
+  width: 682px;
 }
 
 .blogListItem__block {
-	display: flex;
-	margin-bottom: 6px;
+  display: flex;
+  margin-bottom: 6px;
 }
 
 .blogListItem__title {
-	height: 28px;
-	color: #1890FF;
-	font-size: 20px;
-	font-weight: 400;
-	line-height: 28px;
-	margin-right: 13px;
-	overflow: hidden;
+  height: 28px;
+  color: #1890ff;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  margin-right: 13px;
+  overflow: hidden;
 }
 
 .blogListItem__heart {
-	margin-right: 5px;
+  margin-right: 5px;
 }
 
 .blogListItem__favorited {
-	color: rgba(0, 0, 0, 0.75);
-	font-size: 12px;
-	font-weight: 400;
-	line-height: 27px;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 27px;
 }
 
 .blogListItem__tagList {
-	height: 22px;
-	margin-bottom: 7px;
-	overflow: hidden;
+  height: 22px;
+  margin-bottom: 7px;
+  overflow: hidden;
 }
 
 .blogListItem__tagList_list {
-	display: flex;
-	list-style-type: none;
+  display: flex;
+  list-style-type: none;
 }
 
 .blogListItem__tagList_list-item {
-	font-size: 12px;
-	color: rgba(0, 0, 0, 0.50);
-	border: 1px solid rgba(0, 0, 0, 0.50);
-	border-radius: 2px;
-	padding: 2px 5px;
-	margin-right: 8px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  padding: 2px 5px;
+  margin-right: 8px;
 }
 
 .blogListItem_body {
-	height: 45px;
-	color: rgba(0, 0, 0, 0.75);
-	font-size: 12px;
-	font-weight: 400;
-	line-height: 22px;
-	overflow: hidden;
+  height: 45px;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+  overflow: hidden;
 }
 
 .blogListItem__author {
-	position: absolute;
-	top: 17px;
-	right: 14px;
-	display: flex;
+  position: absolute;
+  top: 17px;
+  right: 14px;
+  display: flex;
 }
 
 .blogListItem__case {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .blogListItem__name {
-	color: rgba(0, 0, 0, 0.85);
-	font-size: 18px;
-	font-weight: 400;
-	line-height: 28px;
-	margin-bottom: -5px;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  margin-bottom: -5px;
 }
 
 .blogListItem__created {
-	color: var(--text-color-secondary, rgba(0, 0, 0, 0.50));
-	font-size: 12px;
-	font-weight: 400;
-	line-height: 22px;
+  color: var(--text-color-secondary, rgba(0, 0, 0, 0.5));
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
 }
 
 .blogListItem__avatar {
-	width: 46px;
-	height: 46px;
-	border-radius: 50%;
-	margin-left: 12px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  margin-left: 12px;
 }

@@ -1,5 +1,5 @@
 import ReactMarkdown from 'react-markdown'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { format } from 'date-fns'
 
@@ -34,13 +34,11 @@ function BlogItem({
     handleToggleFavorite()
   }
 
-  const blogList = tagList.map((tag, i) => {
-    return (
-      <li key={i} className={classes['blogItem__tagList_list-item']}>
-        {tag}
-      </li>
-    )
-  })
+  const blogList = tagList.map((tag, i) => (
+    <li key={i} className={classes['blogItem__tagList_list-item']}>
+      {tag}
+    </li>
+  ))
 
   const formattedDate = format(new Date(updatedAt), 'MMMM d, yyyy')
 
